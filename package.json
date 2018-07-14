@@ -1,0 +1,22 @@
+{
+  "name": "aisapublicidad-nuxt",
+  "version": "1.0.0",
+  "description": "New web for Aisapublicidad",
+  "author": "marinaaisa",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "node-sass": "^4.9.2",
+    "nuxt": "^1.0.0",
+    "sass-loader": "^7.0.3"
+  },
+  "devDependencies": {
+    "cross-env": "^5.0.1",
+    "vueperslides": "^1.5.0"
+  }
+}
