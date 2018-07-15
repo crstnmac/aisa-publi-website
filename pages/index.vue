@@ -7,7 +7,6 @@
     </section>
     <div class="container">
       <Work/>
-      <Work/>
     </div>
   </div>
 </template>
