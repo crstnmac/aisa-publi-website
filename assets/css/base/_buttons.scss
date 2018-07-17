@@ -92,7 +92,7 @@ button{
 
 .btn-primary-light{
   @extend %btn;
-  @include button-color($primary,$primary-lighter, transparent,
+  @include button-color($primary,$primary-light, transparent,
     $primary, lighten($primary, 30%), $primary);
   @include button-size(.3em, 1em, inherit, 1.4em, 3px);
 }
@@ -122,7 +122,7 @@ button{
   transition: all .2s ease-out;
   position: relative;
 
-  //fix position icon 
+  //fix position icon
   &::before {
     position: absolute;
     top: 50%;

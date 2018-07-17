@@ -65,6 +65,7 @@ module.exports = {
         '@/assets/css/utilities/_helpers.scss',
         '@/assets/css/utilities/_normalize.scss',
         '@/assets/css/base/_grid.scss',
+        '@/assets/css/base/_buttons.scss'
     ]],
   ],
 

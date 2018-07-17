@@ -1,29 +1,37 @@
 <template lang="html">
-  <div class="work-types">
-    <div class="work-type">
-      <div class="work-type__description">
-        <img src="" alt="">
-        <h3>{{ title }}</h3>
-        <button type="button" name="button" @click="onArrowClick(false)">mover izquierda</button>
-        <button type="button" name="button" @click="triggerAutoplay()" v-if="autoplay">stop</button>
-        <button type="button" name="button" @click="triggerAutoplay()" v-if="!autoplay">play</button>
-        <button type="button" name="button" @click="onArrowClick()">mover derecha</button>
+  <div class="work-type" :class="{ 'reverse': reverse }">
+    <div class="work-type__description">
+      <img :src="require('~/assets/img/' + img)" :alt="id" class="work-type__img">
+      <h3 class="work-type__title">{{ title }}</h3>
+      <div class="work-type__btns">
+        <button type="button" name="button" @click="onArrowClick(false)" class="work-type__btn">
+          <img src="@/assets/img/back.svg" alt="Back Button">
+        </button>
+        <button type="button" name="button" @click="triggerAutoplay()" v-if="autoplayData" class="work-type__btn">
+          <img src="@/assets/img/pause.svg" alt="Pause Button">
+        </button>
+        <button type="button" name="button" @click="triggerAutoplay()" v-if="!autoplayData" class="work-type__btn">
+          <img src="@/assets/img/play.svg" alt="Play Button">
+        </button>
+        <button type="button" name="button" @click="onArrowClick()" class="work-type__btn">
+          <img src="@/assets/img/forward.svg" alt="Forward Button">
+        </button>
       </div>
-      <div class="work-type__content">
-        <vueper-slides :autoplay="autoplay" ref="slides" :arrows="false">
-          <vueper-slide v-for="(slide, i) in slides"
-            :key="slide.id"
-            :title="slide.title"
-            :style="'background-color: ' + slide.color">
-            <div slot="slideContent">
-              <nuxt-link v-bind:to="slide.link">
-                <img v-if="slide.type == 'logo'" v-bind:src="require('~/assets/img/' + slide.content)" alt="">
-                <video v-if="slide.type == 'video'" v-bind:src="require('~/assets/img/' + slide.content)" autoplay v-bind:poster="require('~/assets/img/' + slide.content)"></video>
-              </nuxt-link>
-            </div>
-          </vueper-slide>
-        </vueper-slides>
-      </div>
+    </div>
+    <div class="work-type__content">
+      <vueper-slides :autoplay="autoplayData" ref="slides" :arrows="false">
+        <vueper-slide v-for="(slide, i) in slides"
+          :key="slide.id"
+          :title="slide.title"
+          :style="'background-color: ' + slide.color">
+          <div slot="slideContent">
+            <nuxt-link :to="slide.link">
+              <img v-if="slide.type == 'logo'" :src="require('~/assets/img/' + slide.content)" alt="">
+              <video v-if="slide.type == 'video'" :src="require('~/assets/img/' + slide.content)" autoplay v-bind:poster="require('~/assets/img/' + slide.content)"></video>
+            </nuxt-link>
+          </div>
+        </vueper-slide>
+      </vueper-slides>
     </div>
   </div>
 </template>
@@ -36,15 +44,25 @@ export default {
   props: {
     id: String,
     title: String,
+    img: String,
     slides: Array,
+    reverse: {
+      type: Boolean,
+      default: false
+    },
     autoplay: Boolean
+  },
+  data () {
+    return {
+      autoplayData: this.autoplay,
+    }
   },
   methods: {
     onArrowClick(e) {
       this.$refs.slides.onArrowClick(e)
     },
     triggerAutoplay() {
-      this.autoplay = !this.autoplay
+      this.autoplayData = !this.autoplayData
     }
   }
 }
@@ -64,6 +82,9 @@ export default {
 .vueperslides__bullet {
   box-shadow: none;
 }
+.vueperslides__parallax-wrapper, .vueperslides__inner, .vueperslides {
+  height: 100%;
+}
 .vueperslides__parallax-wrapper::before, .vueperslides__parallax-wrapper::after {
     content: "";
     position: absolute;
@@ -75,12 +96,42 @@ export default {
     z-index: 2;
 }
 .work-type {
+  @include make-row;
+  display: flex;
+  margin-bottom: 7.2rem;
+
+  &__title {
+    text-align: center;
+    font-weight: 500;
+  }
+
   &__description {
     @include make-sm-column(4);
   }
   &__content {
     @include make-sm-column(8);
   }
+  &__img {
+    width: 100%;
+    padding: 0 2rem 2rem 2rem;
+  }
+  &__btns {
+    text-align: center;
+  }
+  &__btn {
+    @extend %btn;
+    @include button-color($primary,$primary-light, transparent,
+      $primary, $primary, transparent);
+    padding: 1rem;
+    border-radius: 1rem;
+    padding: 1rem 2rem;
+  }
+  &__btn ~ &__btn{
+    margin-left: 1rem;
+  }
+}
+.reverse {
+  flex-direction: row-reverse;
 }
 
 </style>

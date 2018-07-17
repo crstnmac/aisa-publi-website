@@ -1,7 +1,6 @@
 //COLORS
 $primary:             #178A8B;
-$primary-light:       lighten($primary,20%);
-$primary-lighter:     lighten($primary,30%);
+$primary-light:       #24D3D3;
 $secondary:           #161618;
 $secondary-light:     #9a9a9a;
 $secondary-lighter:   #e4e4e4;
@@ -16,7 +15,7 @@ $text-negative:       white;
           //name //color //text or false
 $colors:  "primary" $primary $text-negative,
           "primary-light" $primary-light $text-negative,
-          "primary-lighter" $primary-lighter false,
+          "primary-light" $primary-light false,
           "secondary" $secondary $text-negative,
           "secondary-light" $secondary-light $text-negative,
           "secondary-lighter" $secondary-lighter false,

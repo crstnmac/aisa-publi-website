@@ -12,8 +12,8 @@
     <div class="navigation-items">
       <ul class="nav-list">
         <li class="nav-item"><nuxt-link to="/" class="ani"><span>empecémos</span></nuxt-link></li>
-        <li class="nav-item"><nuxt-link to="/about" class="ani"><span>así somos</span></nuxt-link></li>
-        <li class="nav-item"><nuxt-link to="/admin" class="ani"><span>lo que hacemos</span></nuxt-link></li>
+        <li class="nav-item"><nuxt-link to="/#work" class="ani"><span>lo que hacemos</span></nuxt-link></li>
+        <li class="nav-item"><nuxt-link to="/admin" class="ani"><span>así somos</span></nuxt-link></li>
         <li class="nav-item"><nuxt-link to="/admin" class="ani"><span>¿hablamos?</span></nuxt-link></li>
       </ul>
     </div>
