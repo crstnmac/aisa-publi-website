@@ -18,6 +18,7 @@
   },
   "devDependencies": {
     "cross-env": "^5.0.1",
+    "image-webpack-loader": "^4.3.1",
     "vueperslides": "^1.5.0"
   }
 }
