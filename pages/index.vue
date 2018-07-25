@@ -8,17 +8,20 @@
     <div class="container">
       <Work/>
     </div>
+    <AboutUs/>
   </div>
 </template>
 
 <script>
 import Hero from '~/components/sections/Hero.vue'
 import Work from '~/components/sections/Work.vue'
+import AboutUs from '~/components/sections/AboutUs.vue'
 
 export default {
   components: {
     Hero,
-    Work
+    Work,
+    AboutUs
   }
 }
 </script>
