@@ -4,7 +4,7 @@
       <img :src="require('~/assets/img/' + img)" :alt="id" class="work-type__img">
       <h3 class="work-type__title">{{ title }}</h3>
       <div class="work-type__btns">
-        <button type="button" name="button" @click="onArrowClick(false)" class="work-type__btn">
+        <button type="button" name="button" @click="onArrowClickBefore()" class="work-type__btn">
           <img src="@/assets/img/back.svg" alt="Back Button">
         </button>
         <button type="button" name="button" @click="triggerAutoplay()" v-if="autoplayData" class="work-type__btn">
@@ -13,25 +13,27 @@
         <button type="button" name="button" @click="triggerAutoplay()" v-if="!autoplayData" class="work-type__btn">
           <img src="@/assets/img/play.svg" alt="Play Button">
         </button>
-        <button type="button" name="button" @click="onArrowClick()" class="work-type__btn">
+        <button type="button" name="button" @click="onArrowClickNext()" class="work-type__btn">
           <img src="@/assets/img/forward.svg" alt="Forward Button">
         </button>
       </div>
     </div>
     <div class="work-type__content">
-      <vueper-slides :autoplay="autoplayData" ref="slides" :arrows="false">
-        <vueper-slide v-for="(slide, i) in slides"
-          :key="slide.id"
-          :title="slide.title"
-          :style="'background-color: ' + slide.color">
-          <div slot="slideContent">
-            <nuxt-link :to="slide.link">
-              <img v-if="slide.type == 'logo'" :src="require('~/assets/img/' + slide.content)" alt="">
-              <video v-if="slide.type == 'video'" :src="require('~/assets/img/' + slide.content)" autoplay v-bind:poster="require('~/assets/img/' + slide.content)"></video>
-            </nuxt-link>
-          </div>
-        </vueper-slide>
-      </vueper-slides>
+      <no-ssr>
+        <vueper-slides :autoplay="autoplayData" ref="slides" :arrows="false">
+          <vueper-slide v-for="(slide, i) in slides"
+            :key="slide.id"
+            :title="slide.title"
+            :style="'background-color: ' + slide.color">
+            <div slot="slideContent">
+              <nuxt-link :to="slide.link">
+                <img v-if="slide.type == 'logo'" :src="require('~/assets/img/' + slide.content)" alt="">
+                <video v-if="slide.type == 'video'" :src="require('~/assets/img/' + slide.content)" autoplay v-bind:poster="require('~/assets/img/' + slide.content)"></video>
+              </nuxt-link>
+            </div>
+          </vueper-slide>
+        </vueper-slides>
+      </no-ssr>
     </div>
   </div>
 </template>
@@ -58,8 +60,11 @@ export default {
     }
   },
   methods: {
-    onArrowClick(e) {
-      this.$refs.slides.onArrowClick(e)
+    onArrowClickNext() {
+      this.$refs.slides.next()
+    },
+    onArrowClickBefore() {
+      this.$refs.slides.previous()
     },
     triggerAutoplay() {
       this.autoplayData = !this.autoplayData
