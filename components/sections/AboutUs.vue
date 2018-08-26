@@ -7,12 +7,13 @@
           <img src="@/assets/img/pilar_aisa.jpg" alt="Pilar Aísa">
         </div>
         <div class="about-us__texts">
-          <h3>Pilar Aísa</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+          <h3>Pilar Aísa Gamero</h3>
+          <p>Aunque me licencie en Bellas Artes por la universidad de Barcelona en la especialidad de diseño gráfico en el siglo pasado, sigo con atención todas las novedades</p>
+          <p>En mi CV consta que soy licenciada en Bellas Artes por la Universidad de Barcelona. La especialidad en diseño gráfico se quedó corta y completé mis estudios de publicidad en diferentes ciudades</p>
         </div>
       </div>
     </div>
-    <h2 class="title">nuestras oficinas</h2>
+    <h2 class="title">la fábrica de ideas</h2>
     <div class="about-us__images">
       <div class="about-us__images-col">
         <div class="about-us__image about-us__image--1"></div>
