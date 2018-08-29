@@ -20,6 +20,7 @@ import Hero from '~/components/sections/Hero.vue'
 import Work from '~/components/sections/Work.vue'
 import AboutUs from '~/components/sections/AboutUs.vue'
 import Clients from '~/components/sections/Clients.vue'
+import 'vueperslides/dist/vueperslides.min.css'
 
 export default {
   components: {
