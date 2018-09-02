@@ -20,15 +20,24 @@
     </div>
     <div class="work-type__content">
       <no-ssr>
-        <vueper-slides :autoplay="autoplayData" ref="slides" :arrows="false">
+        <vueper-slides class="no-shadow" :autoplay="autoplayData" ref="slides" :arrows="false">
           <vueper-slide v-for="(slide, i) in slides"
             :key="slide.id"
             :title="slide.title"
             :style="'background-color: ' + slide.color">
             <div slot="slideContent">
               <nuxt-link :to="slide.link">
-                <img v-if="slide.type == 'logo'" :src="require('~/assets/img/' + slide.content)" alt="">
-                <video v-if="slide.type == 'video'" :src="require('~/assets/img/' + slide.content)" autoplay v-bind:poster="require('~/assets/img/' + slide.content)"></video>
+                <img v-if="slide.type == 'img'" :src="require('~/assets/img/' + slide.content)" alt="">
+                <video id="myVideo" ref="myVideo" v-if="slide.type == 'video'" autoplay muted loop class="work-type__video">
+                  <source :src="require('~/assets/video/' + slide.content)" type="video/mp4">
+                </video>
+                <script type="text/javascript">
+                  var video = document.getElementById("myVideo");
+                  video.oncanplaythrough = function() {
+                    video.muted = true;
+                    video.play();
+                  }
+                </script>
               </nuxt-link>
             </div>
           </vueper-slide>
@@ -37,7 +46,6 @@
     </div>
   </div>
 </template>
-
 <script>
 import { VueperSlides, VueperSlide } from 'vueperslides'
 
@@ -56,7 +64,7 @@ export default {
   },
   data () {
     return {
-      autoplayData: this.autoplay,
+      autoplayData: this.autoplay
     }
   },
   methods: {
@@ -86,7 +94,15 @@ export default {
 }
 .vueperslides__bullet {
   box-shadow: none;
+  border-color: $primary;
 }
+.work-type {
+  .vueperslides__bullets {
+    justify-content: flex-start;
+    left: 13px;
+  }
+}
+
 .vueperslides__parallax-wrapper, .vueperslides__inner, .vueperslides {
   height: 100%;
 }
@@ -100,10 +116,14 @@ export default {
     box-shadow: none;
     z-index: 2;
 }
+// .vueperslides__parallax-wrapper {
+//   box-shadow: none;
+// }
 .work-type {
   @include make-row;
   display: flex;
   margin-bottom: 7.2rem;
+  justify-content: space-between;
 
   &__title {
     text-align: center;
@@ -114,7 +134,8 @@ export default {
     @include make-sm-column(4);
   }
   &__content {
-    @include make-sm-column(8);
+    width: 554px;
+    height: 312px;
   }
   &__img {
     width: 100%;
@@ -134,9 +155,22 @@ export default {
   &__btn ~ &__btn{
     margin-left: 1rem;
   }
+  &__video {
+    height: 100%;
+    position: absolute;
+    left: -1px;
+  }
+}
+.vueperslide__content {
+  height: 100%;
+  position: relative;
 }
 .reverse {
   flex-direction: row-reverse;
+}
+.vueperslide__content-wrapper {
+  position: relative!important;
+  height: 100%;
 }
 
 </style>

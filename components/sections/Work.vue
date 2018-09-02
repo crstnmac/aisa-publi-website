@@ -25,15 +25,15 @@ export default {
         id: 'logos',
         title: '“Logotipos, marcas, imagen corporativa”',
         img: 'cassette_logos.jpg',
-        autoplay: true,
+        autoplay: false,
         slides: [
           {
             id: 'logo-1',
-            title: 'Primer logo',
-            content: 'aisa-publicidad-logo.png',
+            title: '',
+            content: 'ramon.mp4',
             color: '#FFA3E4',
-            link: 'aisa-publicidad-logo',
-            type: 'logo'
+            link: 'trabajo/logos',
+            type: 'video'
           },
           {
             id: 'logo-2',
@@ -41,7 +41,7 @@ export default {
             content: 'aisa-publicidad-logo.png',
             color: '#7AFFC1',
             link: 'aisa-publicidad-logo',
-            type: 'video'
+            type: 'img'
           },
           {
             id: 'logo-3',
@@ -65,7 +65,7 @@ export default {
             content: 'aisa-publicidad-logo.png',
             color: '#FFA3E4',
             link: 'aisa-publicidad-logo',
-            type: 'logo'
+            type: 'img'
           },
           {
             id: 'logo-2',
@@ -73,7 +73,7 @@ export default {
             content: 'aisa-publicidad-logo.png',
             color: '#7AFFC1',
             link: 'aisa-publicidad-logo',
-            type: 'video'
+            type: 'img'
           },
           {
             id: 'logo-3',
@@ -96,7 +96,7 @@ export default {
             content: 'aisa-publicidad-logo.png',
             color: '#FFA3E4',
             link: 'aisa-publicidad-logo',
-            type: 'logo'
+            type: 'img'
           },
           {
             id: 'logo-2',
@@ -104,7 +104,7 @@ export default {
             content: 'aisa-publicidad-logo.png',
             color: '#7AFFC1',
             link: 'aisa-publicidad-logo',
-            type: 'video'
+            type: 'img'
           },
           {
             id: 'logo-3',
@@ -128,7 +128,7 @@ export default {
             content: 'aisa-publicidad-logo.png',
             color: '#FFA3E4',
             link: 'aisa-publicidad-logo',
-            type: 'logo'
+            type: 'img'
           },
           {
             id: 'logo-2',
@@ -136,7 +136,7 @@ export default {
             content: 'aisa-publicidad-logo.png',
             color: '#7AFFC1',
             link: 'aisa-publicidad-logo',
-            type: 'video'
+            type: 'img'
           },
           {
             id: 'logo-3',
@@ -159,7 +159,7 @@ export default {
             content: 'aisa-publicidad-logo.png',
             color: '#FFA3E4',
             link: 'aisa-publicidad-logo',
-            type: 'logo'
+            type: 'img'
           },
           {
             id: 'logo-2',
@@ -167,7 +167,7 @@ export default {
             content: 'aisa-publicidad-logo.png',
             color: '#7AFFC1',
             link: 'aisa-publicidad-logo',
-            type: 'video'
+            type: 'img'
           },
           {
             id: 'logo-3',
@@ -190,7 +190,7 @@ export default {
             content: 'aisa-publicidad-logo.png',
             color: '#FFA3E4',
             link: 'aisa-publicidad-logo',
-            type: 'logo'
+            type: 'img'
           },
           {
             id: 'logo-2',
@@ -198,7 +198,7 @@ export default {
             content: 'aisa-publicidad-logo.png',
             color: '#7AFFC1',
             link: 'aisa-publicidad-logo',
-            type: 'video'
+            type: 'img'
           },
           {
             id: 'logo-3',
@@ -221,7 +221,7 @@ export default {
             content: 'aisa-publicidad-logo.png',
             color: '#FFA3E4',
             link: 'aisa-publicidad-logo',
-            type: 'logo'
+            type: 'img'
           },
           {
             id: 'logo-2',
@@ -229,7 +229,7 @@ export default {
             content: 'aisa-publicidad-logo.png',
             color: '#7AFFC1',
             link: 'aisa-publicidad-logo',
-            type: 'video'
+            type: 'img'
           },
           {
             id: 'logo-3',
