@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="work-type" :class="{ 'reverse': reverse }">
+  <div class="work-type" :class="{ 'reverse': reverse }" ref="testref">
     <div class="work-type__description">
       <img :src="require('~/assets/img/' + img)" :alt="id" class="work-type__img">
       <h3 class="work-type__title">{{ title }}</h3>
@@ -28,16 +28,9 @@
             <div slot="slideContent">
               <nuxt-link :to="slide.link">
                 <img v-if="slide.type == 'img'" :src="require('~/assets/img/' + slide.content)" alt="">
-                <video id="myVideo" ref="myVideo" v-if="slide.type == 'video'" autoplay muted loop class="work-type__video">
+                <video ref="myVideo" v-if="slide.type == 'video'" loop class="work-type__video">
                   <source :src="require('~/assets/video/' + slide.content)" type="video/mp4">
                 </video>
-                <script type="text/javascript">
-                  var video = document.getElementById("myVideo");
-                  video.oncanplaythrough = function() {
-                    video.muted = true;
-                    video.play();
-                  }
-                </script>
               </nuxt-link>
             </div>
           </vueper-slide>
@@ -76,7 +69,18 @@ export default {
     },
     triggerAutoplay() {
       this.autoplayData = !this.autoplayData
+    },
+    autoplayVideo() {
+      setTimeout(() => {
+        if (this.$refs.myVideo) {
+          this.$refs.myVideo[0].muted = true
+          this.$refs.myVideo[0].play()
+        }
+      }, 1)
     }
+  },
+  mounted () {
+    this.autoplayVideo()
   }
 }
 </script>
