@@ -124,7 +124,6 @@ export default {
 //   box-shadow: none;
 // }
 .work-type {
-  @include make-row;
   display: flex;
   margin-bottom: 7.2rem;
   justify-content: space-between;
@@ -135,15 +134,14 @@ export default {
   }
 
   &__description {
-    @include make-sm-column(4);
+    @include make-sm-column(4, 0);
   }
   &__content {
-    width: 554px;
-    height: 312px;
+    width: 617px;
+    height: 348px;
   }
   &__img {
     width: 100%;
-    padding: 0 2rem 2rem 2rem;
   }
   &__btns {
     text-align: center;
