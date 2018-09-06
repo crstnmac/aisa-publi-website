@@ -1,24 +1,17 @@
 <template>
-<div class="container">
   <header class="the-header">
     <TheSideNavToggle @toggle="$emit('sidenavToggle')" />
-    <div class="logo">
-      <nuxt-link to="/">
-        <img src="@/assets/img/aisa-publicidad-logo.png" alt="Aisa Publicidad">
-        Aisa Publicidad
-      </nuxt-link>
-    </div>
     <div class="spacer"></div>
     <div class="navigation-items">
       <ul class="nav-list">
         <li class="nav-item"><nuxt-link to="/" class="ani"><span>empecémos</span></nuxt-link></li>
         <li class="nav-item"><nuxt-link to="/#work" class="ani"><span>lo que hacemos</span></nuxt-link></li>
-        <li class="nav-item"><nuxt-link to="/admin" class="ani"><span>así somos</span></nuxt-link></li>
-        <li class="nav-item"><nuxt-link to="/admin" class="ani"><span>¿hablamos?</span></nuxt-link></li>
+        <li class="nav-item"><nuxt-link to="/#about-us" class="ani"><span>así somos</span></nuxt-link></li>
+        <li class="nav-item"><nuxt-link to="/#clients" class="ani"><span>nuestros clientes</span></nuxt-link></li>
+        <li class="nav-item"><nuxt-link to="/#contact" class="ani"><span>¿hablamos?</span></nuxt-link></li>
       </ul>
     </div>
   </header>
-</div>
 </template>
 
 <script>
