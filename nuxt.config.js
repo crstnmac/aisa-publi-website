@@ -51,6 +51,9 @@ module.exports = {
   ** Build configuration
   */
   build: {
+    extractCSS: {
+      allChunks: true
+    },
     extend(config, { isDev, isClient, isServer }){
       config.module.rules.forEach((rule) => {
         if (rule.test.toString() === '/\\.(png|jpe?g|gif|svg)$/'){
