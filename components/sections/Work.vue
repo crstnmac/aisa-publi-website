@@ -183,6 +183,7 @@ export default {
         title: '"Merchandising diferente y personalizado"',
         img: 'cassette_merchandising.jpg',
         autoplay: true,
+        reverse: true,
         slides: [
           {
             id: 'logo-1',
