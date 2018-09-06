@@ -89,10 +89,12 @@ module.exports = {
   vendor: ['image-webpack-loader'],
   generate: {
     fallback: true,
+    fallback: "404.html",
     subFolders: false,
     routes: [
       '/trabajo/logos',
       '/trabajo/campanas',
+      '404'
     ]
   }
 }
