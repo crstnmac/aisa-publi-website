@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="work-type" :class="{ 'reverse': reverse }" ref="testref">
+  <div class="work-type" :class="{ 'reverse': reverse }">
     <div class="work-type__description">
       <img :src="require('~/assets/img/' + img)" :alt="id" class="work-type__img">
       <h3 class="work-type__title">{{ title }}</h3>
